@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather_App_by_Pawan_Karpe..</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+</head>
+
+<body>
+    <!-- Navigation Bar code goes here -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Weather Report</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Usage Guide</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            City
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" target="_blank"
+                                    href="https://en.wikipedia.org/wiki/Delhi">Delhi</a></li>
+                            <li><a class="dropdown-item" target="_blank"
+                                    href="https://en.wikipedia.org/wiki/Mumbai">Mumbai</a></li>
+
+                            <li><a class="dropdown-item" target="_blank"
+                                    href="https://en.wikipedia.org/wiki/Goa">Goa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank"
+                            href="https://www.linkedin.com/in/pawan-karpe-676697176/?originalSubdomain=in">About me</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search City here...."
+                        aria-label="Search" id="city">
+                    <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="top-heading text-center ">Weather for <span id="cityName"></span></h1>
+
+    <!-- Main page code goes here -->
+    <div class="container">
+        <div class="container-fluid">
+            <div class="container p-5">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card h-70 shadow-lg">
+                            <div class="card-body">
+                                <div class="text-center p-3">
+                                    <h5 class="card-title">Sun and other Details</h5>
+                                    <small>feels_like</small>
+
+                                    <span class="h2"><span id="feels_like1"></span></span>
+
+                                </div>
+                                <p class="card-text">This card give Sunrise and Sunset Details for <span
+                                        id="cityName2"></span></p>
+                            </div>
+                            <img src="./images/sunrise.png" alt="sunrise img">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>Sunrise time is : <span id="sunrise"></span></li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>Sunset time is : <span id="sunset"></span></li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>feels_like : <span id="feels_like"></span></li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>Clouds PCT : <span id="cloud_pct"></span></li>
+                            </ul>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card h-100 shadow-lg">
+                            <div class="card-body">
+                                <div class="text-center p-3">
+                                    <h5 class="card-title">Temprature Details</h5>
+                                    <small>Temp</small>
+
+                                    <span class="h2"><span id="temp1"></span></span>&#8451;
+
+                                </div>
+                                <p>This Card will give the details about Temprature for <span id="cityName3"></span></p>
+                            </div>
+                            <img src="./images/temp.png" alt="temp img">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>City : <span id="cityName1"></span></li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>Temprature : <span id="temp"></span></li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>Min-Temprature is : <span id="min_temp"></span></li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>Max-Temprature is : <span id="max_temp"></span></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card h-100 shadow-lg">
+                            <div class="card-body">
+                                <div class="text-center p-3">
+                                    <h5 class="card-title">Wind and Other</h5>
+                                    <small>Humidity</small>
+
+                                    <span class="h2"><span id="humidity1"></span></span>g.m&sup3;
+
+                                </div>
+                                <p class="card-text">This card will give Details about Wind for <span
+                                        id="cityName4"></span></p>
+                            </div>
+                            <img src="./images/Humidity.png" alt="Humidity img">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>Wind Speed is : <span id="wind_speed"></span></li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>Wind Degrees is : <span id="wind_degrees"></span></li>
+                                <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+
+                                    </svg>Humidity is : <span id="humidity"></span></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- <h2 class="table-heading">Top City Weather</h2>
+            <table>
+                <tr>
+                    <th style="width:10%">City</th>
+                    <th style="width:10%"> feels_like </th>
+                    <th style="width:10%"> humidity</th>
+                    <th style="width:10%"> max_temp</th>
+                    <th style="width:10%"> min_temp</th>
+                    <th style="width:10%"> sunrise</th>
+                    <th style="width:10%"> sunset</th>
+                    <th style="width:10%"> temp</th>
+                    <th style="width:10%"> wind_degrees</th>
+                    <th style="width:10%"> wind_speed</th>
+                    <th style="width:10%"> cloud_pct</th>
+                </tr>
+                <tr>
+                    <td>Delhi</td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                </tr>
+                <tr>
+                    <td>Mumbai</td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                </tr>
+                <tr>
+                    <td>Banglore</td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                </tr>
+                <tr>
+                    <td>Ranchi</td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                </tr>
+                <tr>
+                    <td>Goa</td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                    <td><i class="fa fa-remove">1</i></td>
+                    <td><i class="fa fa-check">1</i></td>
+                </tr>
+            </table> -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
