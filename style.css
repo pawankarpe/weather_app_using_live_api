@@ -96,3 +96,34 @@ nav{
     margin-top: 10px;
     margin-bottom: -30px;
 }
+
+/* changes for responsive with phone */
+@media only screen and (max-width: 600px) {
+  .top-heading{
+    margin-top: 10px;
+    margin-bottom: -30px;
+    font-size: 25px;
+}
+.card {
+  border:none;
+  padding: 0px 0px;
+  height: 20vh;
+  width: auto;
+  position: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+body{
+  background-image: url(./images/bg2.jpg);
+   min-height: 100vh;
+  background-size: 100vw 500vh;
+  padding: 0;
+  background-repeat: no-repeat;
+
+}
+
+}
